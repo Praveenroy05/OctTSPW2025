@@ -11,3 +11,5 @@ console.log(b)
 let b = 20
 b = "TS"
 b = true
+b = null
+b = undefined
