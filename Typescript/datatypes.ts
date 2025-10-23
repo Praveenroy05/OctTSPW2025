@@ -98,15 +98,20 @@
 
     // 7. (|) - Allows a variable to accept more than one data type
 
-    let a2 : string | undefined = "TS"
+    let a2 : string | undefined |number = "TS"
     a2 = undefined
-    //a2 = 34
+    a2 = 34
+    //a2 = true
 
     // 8. void - Nothing
 
-    function add(): void{
+    function add(){
         console.log("This is a function")
+       // return "5"
     }
+
+    let user = "name"
+    let USER = "Rahul"
 
 
 
