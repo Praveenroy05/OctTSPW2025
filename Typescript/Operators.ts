@@ -85,7 +85,7 @@ console.log("********************************")
 
 let num9  = 10
 let num10 = "10"
-console.log(num9 == num10) 
+console.log(num9 == num10) // true
 
 // Type conversion and Type coercion
 // Type Conversion - Is a process of converting ine datatype into other by explictly mentioning the datatype - Number(num10)
@@ -98,7 +98,7 @@ console.log(num9 != num10)
 
 // 3. Strict Equal to (===) - Check if the two VALUES are same along with the DATATYPE should be same for the variables.
 
-console.log(num9 === num10) 
+console.log(num9 === num10)  // false
 
 // 4. Strict Not Equal to (!==) 
 
@@ -111,4 +111,53 @@ console.log(10 > 7)
 
 
 
+
+
+
+// 3. Logical Operator - Used the combine multiple conditions to get the final result. The result sould always be in the form boolean (true/false)
+
+     // 1. AND (&&) - Both of the condition should be true to get the result as true
+     // 2. OR (||) - Either of the condition is true, it will return true
+     // 3. Logical NOT (!) - It will reverse the result of condition from true to false and vice versa
+
+     // 1. AND (&&)
+
+     // true && true - true
+     // true && false - false
+     // false && true - false 
+     // false && false - false
+
+
+     console.log("AND (&&)", (10>6) && (12>5));
+     console.log("AND (&&)", (10>6) && (12>50));
+     console.log("AND (&&)", (10>60) && (12>5));
+     console.log("AND (&&)", (10>60) && (12>50));
+
+
+ // OR (||) - 
+
+     // true || true - true
+     // true || false - true
+     // false || true - true 
+     // false || false - false
+
+     console.log("OR (||)", (10>6) || (12>5));
+     console.log("OR (||)", (10>6) || (12>50));
+     console.log("OR (||)", (10>60) || (12>5));
+     console.log("OR (||)", (10>60) || (12>50));
+
+
+// 3. Logical NOT (!) - reverse the result
+
+console.log(!("String" === "String"))
+console.log(!false);
+
+
+// 4. Assignment Operator - Assing the value to a variable
+
+let i = 30
+
 // what is difference between =, ==, ===
+
+
+
