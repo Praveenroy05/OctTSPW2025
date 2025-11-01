@@ -105,7 +105,7 @@
 
     // 8. void - Nothing
 
-    function add(){
+    function add1(){
         console.log("This is a function")
        // return "5"
     }
