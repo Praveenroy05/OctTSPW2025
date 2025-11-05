@@ -228,8 +228,92 @@ let arrowFun = (a:number,b:number,c:number) =>  (a+b+c)
 console.log(arrowFun(10,20,30))
 
 
+// Default and Optional Parameter(TS)
 
-// Array - 2
-// String  - 1
-// Objects - 1 
-// Class - Framework dev
+// Method Overloading - It is a process to create different function with the same name but with different parameters. It is bydefault not possible in JS & TS but by applying logic and using Default and Optional parameter we can achieve method overload.
+
+
+// function test(){
+//     console.log("Function1");
+// }
+
+// function test(title){
+//     console.log("Function1 with parameter");
+// }
+
+// function test(title, name){
+//     console.log("Function1 with 2 parameters");
+// }
+
+// test()
+// test(name)
+// test(name, age)
+
+
+// Default Parameter - 
+
+function test(title :string = "CEO", name:string = "Rahul"){
+   console.log(title, name);
+}
+
+test()
+test("QA")
+
+test("Dev", "Joe")
+
+
+// Optional Parameter(?)
+
+function test2(name:string, age?:number = 20){
+   //console.log(`Your name is ${name} and your age is ${age}`);
+   if(age == undefined){ // undefined == null
+     console.log(`Your name is ${name}`);
+   }else{
+     console.log(`Your name is ${name} and age is ${age}`);
+   }
+}
+
+// let age 
+
+// if(age === null){
+//     console.log(age);
+// }
+
+// let age1 :number 
+
+// console.log(age1);
+// console.log("Line#", typeof age1);
+
+// age == undefined
+// age == null
+// age == "" - X
+// typeof age == "undefined"
+
+
+
+test2("Java") // - //Java
+test2("Java", 20) // Java 20
+
+function test3(name:string, age?:number){
+   //console.log(`Your name is ${name} and your age is ${age}`);
+   if(age){ // undefined == null
+    console.log(`Your name is ${name} and age is ${age}`);
+
+   }else{
+     console.log(`Your name is ${name}`);
+   }
+}
+
+test3("Java") // - //Java
+test3("Java", 20) // Java 20
+
+
+
+// Rest Operator (...) - is to accept multiple value by using a single variable
+
+function fun2(name:string, age:number, ...gift){
+    console.log(name, age);
+    console.log(gift);
+}
+
+fun2("JS", 5, 10,"20",30,true,60,0,70,80)
