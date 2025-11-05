@@ -27,7 +27,8 @@ function loginIntoApplication(){
 
 // Function Expression - let i = Function()
 
-// 1. Named Function - Function Declaration - A function which will also have a name is known as named function.
+// 1. Named Function - Function Declaration - A function which will also have a name is known as named function. - Whnever we have a function which can be utilised more than once.
+
 // 2. Anonymous Function - Function Expression - A function which will not have any name is known as anonymous function.
 // 3. Arrow Function =>
 // 4. Constructor Function  - Class 
@@ -67,7 +68,7 @@ add(50,20)
 
 // 2. Parameterised and returning function
 
-// return statement should be the last statement inside the function
+// return statement should be the last statement inside the function body
 
 function addition(a:number, b:number, c:number){
     return a+b+c
@@ -80,3 +81,155 @@ console.log(result);
 console.log(addition(50,100,100));
 
 console.log(result * 100);
+
+function launchURL(url: string){
+  console.log(url);
+}
+launchURL("Https://google.com")
+
+// 3. Non parameterised and non returning
+
+function greet():void{
+    console.log("Welcome to JS");
+}
+
+greet() // 
+
+// 4. Non parameterised and returning function
+
+function greeting():string{
+    return "Welcome to Java"
+}
+
+console.log(greeting());
+
+let result1 = greeting() //
+console.log(result1);
+
+
+// 2. Anonymous function - Function Expression - A function which will not have any name. Whenever we declare a function without having any name, that function we store inside a variable. This process is known function expression
+
+// let i = 10 - Expression - let i = Function()
+
+// Syntax: - 
+/*
+
+let/const variable = function(parameters: datatype) : return type
+{
+  // code
+}
+
+variable(arguments)
+
+
+*/
+
+// Anonymous and Arrow - call back function - A function which will be declared as a parameter to another function is known as call back function
+
+const anonymousFun = function(a:number,b:number){
+    console.log(a+b);
+}
+
+anonymousFun(10,20)
+
+// Array - map, filter
+
+// let abc = function(){
+//     console.log("Anonymous Function ")
+// }
+ 
+// abc()
+
+
+// Callback - 
+
+// function functionName(func) 
+// {
+//     console.log(func(90,100));  
+// }
+
+// functionName(function(a:number,b){return a+b})
+
+
+// a =10
+// let  func = function(b:number,c:number){
+//     return b+c
+// }
+
+// func(10,20)
+
+
+function fun(name1 : Function){
+   console.log(name1());
+}
+
+let name1 = function(){
+    console.log("Call back function")
+}
+
+fun(function(){
+    console.log("Line # 170 -Call back function")
+})
+
+function fun1(a:number){
+    console.log(a); // 10
+}
+
+// a = 10
+
+fun1(10)
+fun(function(){
+    console.log("Line # 182 - Another Call back function")
+})
+
+let arrray = function(){
+    console.log("Call back function")
+}
+
+
+
+
+// function add4(a:number){
+//     console.log(a);
+// }
+
+// add4(10)
+// add4(50)
+
+// add4(100)
+// add4(500)
+
+// add4(1000)
+// add4(5000)
+
+// add4(1000000)
+// add4(5000000)
+
+
+// 3. Arrow Function(=>) - in 2015 ES6 (ECMA SCRIPT 6) - It does not even require to use function keyword to declare the arrow function
+
+// Syntax:
+
+/*
+
+const varaible = (parameter) =>{
+ // code
+}
+
+variable(argument)
+
+*/
+
+// Arrow - When you are trying to declare which is having a single line
+
+let arrowFun = (a:number,b:number,c:number) =>  (a+b+c)
+
+
+console.log(arrowFun(10,20,30))
+
+
+
+// Array - 2
+// String  - 1
+// Objects - 1 
+// Class - Framework dev
