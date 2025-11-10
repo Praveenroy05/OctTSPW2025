@@ -162,17 +162,110 @@ console.log("Slice", arr2.slice().reverse());
 console.log(arr2);
 
 
-// 7. indexOf(element, startIndex?) - Return the index of first occurances of na element.
+// 7. indexOf(element, startIndex?) - Return the index of first occurances of an element.
 // synatx:
 // arrayName.indexOf(element, startIndex)
-console.log(arr1);
+console.log(arr1)
 console.log(arr1.indexOf(500))
-
 
 // Take an array which have an element alteast repeated for 3-4 times. Write a program to find the number of that particular is available inside 
 
 // 1. [10,20,30,40,50,10,90,100,10,300,10,400,10] - to find number of times 10 appeared in this array
 
-// 2. 
+// 2. To find out the first duplicate element from an array
 
-// 1. To find out the first duplicate element from an array
+// 8. lastIndexOf(element, startIndex?) - Return the index of last occurances of an element.
+console.log(arr1.indexOf(50))
+console.log(arr1.lastIndexOf(50))
+
+// 9. concat(array2, array3,...) - Merges two or more arrays and return the new array
+// Syntax:
+// arrayName.concat(array2, array3,...)
+let arr3 = [1,2,3]
+let arr4 = ["10", "08", "1999"]
+let arr5 = arr3.concat(arr4)
+console.log(arr5);
+
+// 10. join(separator?) - Join all the elements of an array and return as string
+// Syntax:
+// arrayName.join(separator)
+console.log(arr4.join("/"));
+
+
+// 11. toString() - Convert the array to string
+// Syntax:
+// arrayName.toString()
+console.log(arr4.toString());
+
+// 12. includes(element, startIndex?) - Return true if the element is present inside an array else return false
+
+let arr6 = [10,20,30,40,50]
+console.log(arr6.includes(10,2));
+console.log(arr6.includes(-40));
+
+
+console.log("****************************************************")
+// foreach(fun) - It will iterate over the element of an array
+
+// map(fun) - It will iterate over the element of an array and return a new array based on the condition
+
+// filter(fun) - It will iterate over the element of an array and return a new array based on the condition
+
+// reduce(fun) - It will iterate over the element of an array and return a single value based on the condition
+
+// some(fun) - It will iterate over the element of an array and return true/false based on the condition
+
+// every(fun) - It will iterate over the element of an array and return true/false based on the condition
+
+let arr7 = [10,15,20,25,10,30,35,40]
+
+// 13. forEach(fun) - It will iterate over the each and every element of an array once
+// It takes function as a parameter
+// Syntax:
+// arrayname.forEach(function(currentValue, index, array){})
+
+// currentValue - It represents the current element of an array
+// index(optional) - It represents the index of current element being processed in an array
+// array(optional) - The array the current element belongs to
+
+
+for(let element of arr7){
+    console.log(element,arr7.indexOf(element, ));
+}
+
+console.log("***************************************");
+
+for(let i=0; i<arr7.length; i++){
+    console.log(arr7[i], i);
+}
+
+console.log("******************************************");
+// arrayname.forEach(function(currentValue, index, array){})
+
+// let arr7 = [10,15,20,25,10,30,35,40]
+
+arr7.forEach(function(element,index){
+  console.log(element, index); //10 0
+})
+
+console.log("******************************************");
+
+// 14. map(fun) - It will iterate over the element of an array and return a new array based on the condition
+// Create a new array with the result of calling a provided function on every element in this array
+// Return the same number of elements as in the original array
+
+// Syntax:
+// arrayname.map(function(currentValue, index, array){} )
+
+// Ex: Get square of each element from an arr7
+// let arr7 = [10,15,20,25,10,30,35,40]
+
+let mapResult = arr7.map(function(element){
+     return (element ** 2);
+})
+console.log(mapResult);
+
+let mapResult1 = arr7.map(element => element **2)
+console.log(mapResult1);
+
+// USD  = INR * 88 by using map method
