@@ -257,6 +257,11 @@ console.log("******************************************");
 // Syntax:
 // arrayname.map(function(currentValue, index, array){} )
 
+// currentValue - It represents the current element of an array
+// index(optional) - It represents the index of current element being processed in an array
+// array(optional) - The array the current element belongs to
+
+
 // Ex: Get square of each element from an arr7
 // let arr7 = [10,15,20,25,10,30,35,40]
 
@@ -267,5 +272,132 @@ console.log(mapResult);
 
 let mapResult1 = arr7.map(element => element **2)
 console.log(mapResult1);
+console.log(arr7);
 
 // USD  = INR * 88 by using map method
+
+
+// 15. filter(fun) - It will iterate over the element of an array and return a new array based on the condition that you write inside the function
+// Create a new array with all elements that pass the test/condition implemented by the provided function
+
+// Syntax:
+// arrayname.filter(function(currentValue, index, array){} )
+
+// currentValue - It represents the current element of an array
+// index(optional) - It represents the index of current element being processed in an array
+// array(optional) - The array the current element belongs to
+
+let sales = 
+[
+  {category :'fashion', sale : 500000},
+  {category :'electronics', sale : 750000},
+  {category :'Toys', sale : 1000000},
+  {category : 'Mobile', sale : 1500000}
+]
+
+
+
+// [a,b,c,d]
+
+
+
+
+// let price  = 
+// {fashion:50000, electronics:75000, groceries:30000, utilities:15000, others:10000}
+
+// console.log(price.electronics)
+
+
+let filterResult = sales.filter(function(element){
+  return element.sale> 800000 
+
+  // if(element.sale> 800000){
+  //   return element
+  // }
+})
+
+console.log(filterResult);
+
+
+
+// element = {category :'fashion', sale : 500000}
+// element.sale
+
+
+let filterArray = [1,2,3,4,5,6,7,8,9,10]
+
+let filterResult1 = filterArray.filter(function(element){
+   return element %2 == 0
+})
+
+console.log(filterResult1);
+
+
+
+// 16. reduce(fun, initialValue(optional)) - It will iterate over the element of an array and return a single value based on the condition that you write inside the function
+
+// Syntax:
+
+// arrayname.reduce(function(accumulator, currentValue, index, array){}, initialValue(optional))
+
+// accumulator -  The accumated value so far in the array. The accumated value from the previous iteration
+// currentValue - It represents the current element of an array
+// index(optional) - It represents the index of current element being processed in an array
+// array(optional) - The array the current element belongs to
+
+
+let reduceArray = [10,20,30,40,50]
+
+let sum = 0
+
+for(let i = 0 ;i<reduceArray.length; i++){
+     sum = sum + reduceArray[i] // sum = 10+20 = 30
+}
+console.log(sum);
+
+// sum = 0+10+20+30+40+50
+
+let reduceResult = reduceArray.reduce(function(sum, element){
+    sum = sum + element
+    return sum
+})
+
+console.log(reduceResult);  
+
+let arr8 = [1,2,3,4,5]
+// 17. some(fun) - It will iterate over the element of an array and return true/false based on the condition that you write inside the function
+// Syntax:
+// arrayname.some(function(currentValue, index, array){} )
+let someResult = arr8.some(function(element){
+  return element %2 ==0
+})
+console.log(someResult);
+
+// 18. every(fun) - It will iterate over the element of an array and return true/false based on the condition that you write inside the function.
+
+// Syntax:
+// arrayname.every(function(currentValue, index, array){} )
+
+let everyResult = arr8.every(function(element){
+   return element %2 ==0
+})
+
+console.log(everyResult);
+
+
+
+
+
+
+
+
+// String
+
+
+// Object
+// Class - Framework
+
+// 27-28th Novemenber 2025
+// 1st and 2nd December 2025
+
+
