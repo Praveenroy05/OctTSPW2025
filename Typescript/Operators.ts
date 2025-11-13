@@ -109,11 +109,6 @@ console.log(10 > 7)
 // typeof
 
 
-
-
-
-
-
 // 3. Logical Operator - Used the combine multiple conditions to get the final result. The result sould always be in the form boolean (true/false)
 
      // 1. AND (&&) - Both of the condition should be true to get the result as true

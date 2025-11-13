@@ -71,8 +71,10 @@
     // Syntax:
     // stringName.slice(startIndex?, endIndex?)
 
-    console.log(str2.slice(4, 9));
-    console.log(str2.slice(9, 4));
+    //let str2 ="Hello Javascript"            
+
+    console.log(str2.slice()); // o Jav
+    console.log(str2.slice(9, 4));  // 
 
     // What is difference between slice() ans substring()
 
@@ -115,7 +117,7 @@
    // 13. split(separator) - Split a string into multiple string using the specified separator and return them as an array
    // syntax()
    // stringName.split(separator)
-   console.log(email.split("n")[1]);
+   console.log(email.split("$"));
 
    // 14. trim() - Removes the whitespece from the beginning and the end of a string
     // syntax()
