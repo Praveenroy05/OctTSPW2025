@@ -1,18 +1,25 @@
-import { test, expect } from '@playwright/test';
+import {test, expect} from '@playwright/test'
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+test("Login validation",  async function({page}){
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto("https://practicetestautomation.com/practice-test-login/")
+  let username = page.locator("#username")
+  await username.fill("student")
+  await page.locator("#password").fill("Password123")
+  await page.locator("#submit").click()
+  await expect(page.locator("h1.post-title")).toBeVisible()
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  
+  
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+  // promise - pending, rejected, suucessful
+
+})
+
+// broswer and page fixture
+
+
+// async - await
+
+// JS & TS are asynchronous 

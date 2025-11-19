@@ -10,7 +10,20 @@ import { defineConfig, devices } from '@playwright/test';
 
 /**
  * See https://playwright.dev/docs/test-configuration.
+ * 
  */
+
+/*
+
+1. fullyParallel = true and workers = 1  // sequencial
+2. fullyParallel = false and workers = 1  // sequencial
+3. fullyParallel = false and workers > 1  // Test file will run in a parallel mode
+4. fullyParallel = true and workers > 1 // Test case inside the files will run in parallel mode
+
+// fileName.spec.ts - 1 - 99%
+// fileName.test.ts - 2 - 1%
+*/
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -20,16 +33,20 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 5,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  timeout : 120000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
+    screenshot :'on',
+    video :'on',
+    headless : false
   },
 
   /* Configure projects for major browsers */
@@ -39,15 +56,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
@@ -77,3 +94,9 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+
+// export - import
+
+
+ 
