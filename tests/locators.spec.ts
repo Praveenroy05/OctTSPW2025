@@ -93,7 +93,9 @@
 
 //tagname or *[@attribute = 'value'] - (//*[@attribute = 'value'])[2]
 
-1.// //*[@attribute='value'] - (//*[@attribute='value'])[1]
+1. To identify the locator by using xpath:
+
+// //*[@attribute='value'] - (//*[@attribute='value'])[1]
 
 //*[@id='userEmail']
 
@@ -107,13 +109,17 @@ AXES - xpath
 
 //div[@class='form-group']/input[@id='userEmail']
 
-4. 
+4. Moving from previous element to next element (from preceding to following sibling)
 //label[@for='email']/following-sibling::input[@id='userEmail']
   //label[@for='username']/following-sibling::input
 
   //h1[@class='text-center']/following-sibling::h5[1]
 
-5. //input[@id='userEmail']/preceding-sibling::label
+
+
+5. Moving from next element to previous element (from following to preceding sibling)
+
+//input[@id='userEmail']/preceding-sibling::label
 
 
 // <label for="username">Username</label> - precedingsibling to input tag
@@ -171,12 +177,18 @@ page.getByAltText() - Identify the element(image) by using "alt" as an attribute
 page.getByTitle() - Identify the element by using the "title" attribute
 page.getByLabel() - Identify the element by using the label tag.
 
-
+// Codegen - Record and Playback tool - npx playwright code "url"
 
 
 These are the recommended built-in locators.
 
 1. page.getByRole('radio', {name: 'Female'}) to locate by explicit and implicit accessibility attributes.
+
+// 1. button
+// 2. checkbox
+// 3. radio
+// 4. heading
+// 5. textbox
 
 2. page.getByText('Student Registration Form', {exact: true}) to locate by text contentin contains manner.
 
