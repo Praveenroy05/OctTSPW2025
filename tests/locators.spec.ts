@@ -54,7 +54,7 @@
  * 
  * parenttagename >> childtagname or parentLocator childLocator
  * 
- * Ex: - input >> div (OR) input div (by just provide a space between parent and child)
+ * Ex: - input >> div (OR) input div (by just provide a space between parent and child locator)
  * #userEmail-wrapper input
  * 
  * #form #username
@@ -93,11 +93,11 @@
 
 //tagname or *[@attribute = 'value'] - (//*[@attribute = 'value'])[2]
 
-1.// (//*[@attribute='value'])[1]
+1.// //*[@attribute='value'] - (//*[@attribute='value'])[1]
 
 //*[@id='userEmail']
 
-2. (//tagname[@attribute='value'])[1]
+2. //tagname[@attribute='value'] - (//tagname[@attribute='value'])[1]
 
 (//input[@id='userEmail'])[1]
 
@@ -107,7 +107,8 @@ AXES - xpath
 
 //div[@class='form-group']/input[@id='userEmail']
 
-4. //label[@for='email']/following-sibling::input[@id='userEmail']
+4. 
+//label[@for='email']/following-sibling::input[@id='userEmail']
   //label[@for='username']/following-sibling::input
 
   //h1[@class='text-center']/following-sibling::h5[1]
@@ -120,8 +121,13 @@ AXES - xpath
 
 
 
-// 6. //h2[text() = 'Test login']  -  //h5[text() = 'Student Registration Form']
-// 7. (//h2[contains(text(), 'Test')])[1]
+// 6. Identify the element by using the "text value"
+
+//h2[text() = 'Test login']  -  //h5[text() = 'Student Registration Form']
+
+// 7. Identify the element by using the "some portion of text value"
+
+(//h2[contains(text(), 'Test')])[1]
 
 //*[contains(text(),'Registration')]  -- //h5[contains(text(),'Registration')]
 
@@ -154,22 +160,36 @@ AXES - xpath
 
 // GetBy Locators in Playwright
 
+
 /*
+
+page.getByRole() - Identify the element based on the role of an element
+page.getByText() - Identify the element by using the text value
+page.getByPlaceholder() - Identify the element by using "placeholder" as an attribute
+page.getByTestId() - Identify the element by using "data-testid" as an attribute
+page.getByAltText() - Identify the element(image) by using "alt" as an attribute
+page.getByTitle() - Identify the element by using the "title" attribute
+page.getByLabel() - Identify the element by using the label tag.
+
+
+
 
 These are the recommended built-in locators.
 
 1. page.getByRole('radio', {name: 'Female'}) to locate by explicit and implicit accessibility attributes.
 
-2. page.getByText('Student Registration Form', {exact: true}) to locate by text content.
+2. page.getByText('Student Registration Form', {exact: true}) to locate by text contentin contains manner.
+
+ads adson
 
 3. page.getByLabel() to locate a form control by associated label's text.
 
-    1. When you have "for" as an attribute for an element that have been developed using <label> - there we can directly use page.getByLable('label text')
-    2. When you find out <input> inside the <label> - 
+    1. When you have "for" as an attribute for an element that have been developed using <label> - there we can directly use page.getByLable('label text') - page.getByLabel("Username")
+    2. When you find out <input> tag element inside the <label> tag element- 
 
 4. page.getByPlaceholder('First Name')  - to locate an input by placeholder as an attribute.
 
-5. page.getByAltText() to locate an element, usually image, by its text alternative.("alt" as an attribute)
+5. page.getByAltText("logo image") to locate an element, usually image, by its text alternative.("alt" as an attribute)
 
 6. page.getByTitle() to locate an element by its "title" attribute.
 
