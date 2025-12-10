@@ -35,3 +35,34 @@
 // 2. Locate the drop down element by writing the locator
 // 3. Click on  the drop down element identified in the step #2
 // 4. Identify and click on the element that you want to select from the drop down
+
+import {test, expect} from '@playwright/test'
+
+
+test("Drop down developed using SELECT tag handling", async ({page})=>{
+    await page.goto("https://practice.expandtesting.com/dropdown")
+    const countryDD = page.locator("#country")
+    await countryDD.selectOption("DZ")
+    await countryDD.selectOption({value: 'AR'})
+    await countryDD.selectOption({label : 'Belarus'})
+    await countryDD.selectOption({index: 12})
+
+    await page.goto("https://demoqa.com/select-menu")
+    await page.locator("#cars").selectOption(["volvo", 'opel'])
+    await page.waitForTimeout(2000)
+    await page.locator("#cars").selectOption([{label:'Saab'}, {index: 3}])
+    await page.waitForTimeout(2000)
+
+})
+
+
+test("Drop down developed using non SELECT tag handling", async ({page})=>{
+    await page.goto("https://demoqa.com/select-menu")
+    await page.locator("#withOptGroup").click()
+    await page.locator("#react-select-2-option-2").click()
+    await page.locator("div.css-1hwfws3").last().click()
+    await page.locator("#react-select-4-option-0").click()
+    await page.locator("#react-select-4-option-2").click()
+    await page.waitForTimeout(2000)
+
+})
