@@ -397,7 +397,5 @@ console.log(everyResult);
 // Object
 // Class - Framework
 
-// 27-28th Novemenber 2025
-// 1st and 2nd December 2025
 
 
