@@ -44,7 +44,7 @@ console.log(human["age"]);
 
 
 // city
-console.log(human.address.city);
+console.log(human.address);
 
 console.log(human.skills[1]);
 
