@@ -6,19 +6,16 @@ const username = "testnHNk@gmail.com"
 const password = "Testing@1234"
 const incorrectPassword = "test"
 
-let loginPage :LoginPage
-
-test.beforeEach(async ({page})=>{
-   loginPage = new LoginPage(page)
-   await loginPage.launchURL(url)
-})
-
-test("Valid login test", async ()=>{
+test("Valid login test", async ({page})=>{
+    const loginPage = new LoginPage(page)
+    await loginPage.launchURL(url)
     await loginPage.loginIntoApplication(username, password)
     await expect(loginPage.homePageIdentifier).toBeVisible()
 })
 
-test("Invalid login test", async ()=>{
+test("Invalid login test", async ({page})=>{
+    const loginPage = new LoginPage(page)
+    await loginPage.launchURL(url)
     await loginPage.loginIntoApplication(username, incorrectPassword)
     await expect(loginPage.errorMsg).toHaveText("Incorrect email or password.")
 })
