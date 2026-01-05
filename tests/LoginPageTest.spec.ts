@@ -13,12 +13,14 @@ test.beforeEach(async ({page})=>{
    await loginPage.launchURL(url)
 })
 
-test("Valid login test", async ()=>{
-    await loginPage.loginIntoApplication(username, password)
-    await expect(loginPage.homePageIdentifier).toBeVisible()
-})
+test.describe("Login Page Tests", ()=>{
+    test("Valid login test", async ()=>{
+        await loginPage.loginIntoApplication(username, password)
+        await expect(loginPage.homePageIdentifier).toBeVisible()
+    })
 
-test("Invalid login test", async ()=>{
-    await loginPage.loginIntoApplication(username, incorrectPassword)
-    await expect(loginPage.errorMsg).toHaveText("Incorrect email or password.")
+    test("Invalid login test", async ()=>{
+        await loginPage.loginIntoApplication(username, incorrectPassword)
+        await expect(loginPage.errorMsg).toHaveText("Incorrect email or password.")
+    })
 })
