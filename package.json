@@ -4,8 +4,8 @@
   "description": "This is a Playwright typescript project",
   "main": "index.js",
   "scripts": {
-    "test:prod" : "set ENV=prod&& npx playwright test",
-    "test:smokeTest" : "npx playwright test -g @smoke"
+    "test:prod": "set ENV=prod&& npx playwright test",
+    "test:smokeTest": "npx playwright test -g @smoke"
   },
   "repository": {
     "type": "git",
