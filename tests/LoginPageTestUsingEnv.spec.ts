@@ -10,7 +10,7 @@ test.beforeEach(async ({page})=>{
    await loginPage.launchURL(ENV.baseUrl)
 })
 
-test("Valid login test", async ()=>{
+test("Valid login test @smoke", async ()=>{
     await loginPage.loginIntoApplication(ENV.username, ENV.password)
     await expect(loginPage.homePageIdentifier).toBeVisible()
 })

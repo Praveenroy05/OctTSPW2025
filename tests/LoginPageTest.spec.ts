@@ -14,13 +14,18 @@ test.beforeEach(async ({page})=>{
 })
 
 test.describe("Login Page Tests", ()=>{
-    test("Valid login test", async ()=>{
+    test(" @smoke Valid login test", async ()=>{
         await loginPage.loginIntoApplication(username, password)
         await expect(loginPage.homePageIdentifier).toBeVisible()
     })
 
-    test("Invalid login test", async ()=>{
+    test("Invalid login test @regression", async ()=>{
         await loginPage.loginIntoApplication(username, incorrectPassword)
         await expect(loginPage.errorMsg).toHaveText("Incorrect email or password.")
     })
 })
+
+
+// {tag: '@tagname'}
+// Tag the test inside the title of the test case
+

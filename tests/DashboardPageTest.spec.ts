@@ -18,7 +18,7 @@ test.beforeEach(async ({page})=>{
    await loginPage.loginIntoApplication(username, password)
 })
 
-test("Add the product to the cart", async ()=>{
+test("@smoke @regression Add the product to the cart", async ()=>{
     await dashboardPage.searchAndAddProductToCart(productName)
     await expect(dashboardPage.addToCartSuccessMsg).toHaveText(cartSuccessMsg)
 })

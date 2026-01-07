@@ -44,3 +44,13 @@ test("Test4", async ({page}) => {
 
     await page.locator("#username").fill("student", {timeout: 60000})
 })
+
+// Tagging the tests - @smoke , @regression
+
+
+test("Test5", {tag:['@smoke', '@regression']}, async () => {
+    console.log("Test");
+})
+
+
+

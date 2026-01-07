@@ -4,8 +4,10 @@
   "description": "This is a Playwright typescript project",
   "main": "index.js",
   "scripts": {
-    "test:prod" : "set ENV=prod&& npx playwright test",
-    "test:smokeTest" : "npx playwright test -g @smoke"
+    "test:prod": "set ENV=prod&& npx playwright test",
+    "test:smokeTest": "npx playwright test -g @smoke",
+    "test:regression": "npx playwright test -g @regression",
+    "test:smokeAndRegression": "npx playwright test --grep (?=.*@smoke)(?=.*@regression)"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.1",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.3",
     "dotenv": "^17.2.3",
     "xlsx": "^0.18.5"
   }
