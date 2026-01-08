@@ -5,13 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test:prod": "set ENV=prod&& npx playwright test",
-<<<<<<< HEAD
     "test:smokeTest": "npx playwright test -g @smoke",
     "test:regression": "npx playwright test -g @regression",
     "test:smokeAndRegression": "npx playwright test --grep (?=.*@smoke)(?=.*@regression)"
-=======
-    "test:smokeTest": "npx playwright test -g @smoke"
->>>>>>> f352a3f2ef4e993e84b06e753c068da1c5bc10f6
   },
   "repository": {
     "type": "git",
